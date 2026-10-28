@@ -1,0 +1,30 @@
+## squish-64 lossless fraction: 1.00000 max edges: 57
+
+## counts by split/role
+split  role     
+test   HS             2750
+       NHS           13503
+       NHS(nbr)      22000
+       NNHS(nbr)    108024
+train  HS             1303
+       NHS           17436
+
+## exact-duplicate structure
+unique hashes: 130035 of 165016
+hashes carrying >1 class label: 2244
+
+## test images whose exact layout also appears in TRAIN (leakage), by role -> train label
+train_label       -
+role               
+HS             2750
+NHS           13503
+NHS(nbr)      22000
+NNHS(nbr)    108024
+
+## within TEST: NNHS images identical to a test HS-center image
+NNHS == some HS: 0 | NHS(nbr) == some HS: 0 | NHS(center) == some HS: 0
+empty (all-black) clips by role:
+split  role     
+test   NHS            21
+       NHS(nbr)      217
+       NNHS(nbr)    2430

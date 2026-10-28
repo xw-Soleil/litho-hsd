@@ -1,0 +1,19 @@
+# 数据集与派生数据（课程提供，不对外分发）
+data/
+cache/
+*.zip
+
+# 课程资料与参考论文
+*.pdf
+*.docx
+
+# 训练产物体积大，可由脚本复现；只保留每次训练的日志
+runs/**
+!runs/*/
+!runs/*/log.json
+results/explore/
+
+# 系统与缓存文件
+__pycache__/
+*.pyc
+.DS_Store
