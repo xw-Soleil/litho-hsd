@@ -27,6 +27,40 @@
 - EVAL 中 11.5% 的 NNHS 与某张 NHS 图逐像素相同，仅凭图像无法区分。
 - 测试图四周有 88 像素黑边，训练图没有；把训练图按测试格式渲染（`densm`）后三分类有提升。
 
+## 结果展示
+
+**三分类方法总览**：两个方案都超过平凡基线，但离全监督参考还有距离。
+
+![三分类方法总览](results/figures/summary_threeclass.png)
+
+**二分类热点检测**：ICCAD12 标准测试集上的 ROC，菱形是参考论文的工作点。
+
+![二分类 ROC](results/figures/binary_roc.png)
+
+**方案一的亮点：跨工艺节点**。28nm 训练的普通 CNN 在 32nm 上完全失效，方案一每类只需几个样本就能恢复大部分检出率。
+
+![跨工艺节点](results/figures/cross_node.png)
+
+**留一设计**：在 28nm 设计之间迁移时，普通 CNN 已经足够好，meta 训练没有额外优势。
+
+![留一设计](results/figures/lodo.png)
+
+**方案二为什么不够好**：NNHS 的热点概率并不落在中间，而是和真正的非热点挤在一起。
+
+![方案二概率分布](results/figures/s2_prob_hist.png)
+
+**方案一的嵌入空间**：HS 自成一簇，NHS 与 NNHS 完全混在一起。
+
+![嵌入空间](results/figures/s1_embedding_pca.png)
+
+**数据集结构与高分辨率处理**：
+
+![数据集结构](results/figures/dataset_structure.png)
+
+![表示方式](results/figures/representation.png)
+
+其余图（混淆矩阵、K-shot 曲线、阈值搜索）和全部表格见 [results/RESULTS.md](results/RESULTS.md)。
+
 ## 目录结构
 
 ```
@@ -40,7 +74,10 @@ runs/       每次训练的日志（模型权重与预测不入库，可用脚�
 
 环境：Python 3.11+、PyTorch 2.7+、numpy、pandas、pillow、matplotlib。支持 CUDA 和 Apple MPS。
 
-数据集由课程提供，不包含在本仓库中。将 `iccad-official.zip` 解压到 `data/` 后：
+数据集（ICCAD-2012 benchmark 的 PNG 版本，约 142 MB）不包含在本仓库中，可从课程提供的链接下载：
+<https://drive.google.com/file/d/1In9dr5kaAXbflTDn9uUZR1yDHplWnnU4/view>
+
+将 `iccad-official.zip` 解压到 `data/` 后：
 
 ```bash
 cd code

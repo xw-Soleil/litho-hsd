@@ -101,6 +101,7 @@ if "G_context_analysis" in R:
     mc_row("分析：二分类 + 邻域上下文（**非纯图像**）", R["G_context_analysis"], "无，但用了文件名里的邻域结构")
 
 # ------------------------------------------------------------------ scheme 2 detail
+w("\n![summary](figures/summary_threeclass.png)\n")
 w("\n## 4. 方案二细节：NNHS 并不在概率的“中间”\n")
 w("![prob](figures/s2_prob_hist.png)\n")
 for rep, v in R["B_scheme2"].items():
@@ -165,6 +166,7 @@ if LO:
         w(f"| {b} | {n['hs']} / {n['nhs']} | {cell(bt)} | {ks('protonet_k_shot_per_class')} | {ks('cnn_features_k_shot_per_class')} | {cell(v.get('reference_in_domain_binary'))} |")
     w("\n结论：在 28nm 设计之间互相迁移时，普通 CNN 本来就泛化得很好，meta learning 没有优势（误报还更多）；"
       "它的优势只出现在跨工艺节点（28nm → 32nm）、普通 CNN 完全失效的情况。")
+    w("\n![lodo](figures/lodo.png)\n")
 
 # ------------------------------------------------------------------ option A + context
 if R["D_optionA"]:

@@ -515,3 +515,66 @@ if "protonet_k_shot_per_class" in F and "cnn_features_k_shot_per_class" in F:
     ax.legend(fontsize=8, loc="center right")
     fig.tight_layout(); fig.savefig(FIG / "cross_node.png", dpi=200); plt.close(fig)
     print("cross-node figure saved")
+
+# ---------------------------------------------------------------- overview: every three-class method on EVAL
+C_BASE, C_REF = MUTED, INK2
+bars = []  # (label, macro-F1, group)
+B2, C1 = R["B_scheme2"], R["C_scheme1"]
+if "dens" in B2:
+    bars.append(("平凡基线：非热点全判 NNHS", B2["dens"]["trivial_all_nonHS_as_NNHS"]["macro_f1"], "基线"))
+    bars.append(("方案二：固定区间 p∈[0.2, 0.8] 判 NNHS", B2["dens"]["naive_band_02_08"]["macro_f1"], "方案二"))
+    bars.append(("方案二：双阈值（CALIB 调阈值）", B2["dens"]["tuned_on_calib"]["eval"]["macro_f1"], "方案二"))
+if "densm" in B2:
+    bars.append(("方案二：双阈值 + 训练图加黑边", B2["densm"]["tuned_on_calib"]["eval"]["macro_f1"], "方案二"))
+if "proto_dens_s0" in C1:
+    v = C1["proto_dens_s0"]
+    bars.append(("方案一：0-shot 开集（不用 NNHS 标签）", v["zero_shot_openset"]["eval"]["macro_f1"], "方案一"))
+    bars.append(("方案一：每类 20 个样本，原型", v["k_shot_all_classes_from_test_domain"][20]["macro_f1_mean"], "方案一"))
+    bars.append(("方案一：每类 400 个样本，kNN", v["k_shot_knn15"][400]["macro_f1_mean"], "方案一"))
+if "proto_densm_s0" in C1:
+    bars.append(("方案一：每类 400 个样本，kNN + 训练图加黑边", C1["proto_densm_s0"]["k_shot_knn15"][400]["macro_f1_mean"], "方案一"))
+if "sup3_dens_s0" in R["D_optionA"]:
+    bars.append(("参考：全监督三分类（用全部 NNHS 标签）", R["D_optionA"]["sup3_dens_s0"]["macro_f1"], "参考"))
+if bars:
+    gcol = {"基线": C_BASE, "方案二": C_HS, "方案一": C_NHS, "参考": C_REF}
+    fig, ax = plt.subplots(figsize=(8.6, 0.42 * len(bars) + 1.4))
+    ypos = np.arange(len(bars))[::-1]
+    for yy, (lab, val, g) in zip(ypos, bars):
+        ax.barh(yy, val, height=0.72, color=gcol[g], edgecolor=SURF, linewidth=2)
+        ax.text(val + 0.006, yy, f"{val:.3f}", va="center", ha="left", fontsize=9, color=INK)
+    ax.set_yticks(ypos)
+    ax.set_yticklabels([b[0] for b in bars], fontsize=9, color=INK2)
+    ax.set_xlim(0, 0.88)
+    ax.set_xlabel("EVAL macro-F1（三分类，越大越好）")
+    ax.grid(axis="y", visible=False)
+    ax.axvline(bars[0][1], color=C_BASE, ls=":", lw=1.2)
+    from matplotlib.patches import Patch
+    ax.legend(handles=[Patch(color=gcol[g], label=g) for g in ("基线", "方案一", "方案二", "参考")],
+              loc="upper center", bbox_to_anchor=(0.5, -0.14), fontsize=8.5, ncol=4)
+    ax.set_title("三分类方法总览（同一个 EVAL 集，117,027 个窗口）", loc="left")
+    fig.tight_layout(); fig.savefig(FIG / "summary_threeclass.png", dpi=200); plt.close(fig)
+    print("summary figure saved")
+
+# ---------------------------------------------------------------- leave-one-design-out comparison
+if R.get("F_lodo") and "protonet_k_shot_per_class" in R["F_cross_node"]:
+    rows = [("iccad1\n32nm", R["F_cross_node"])] + [(f"{b}\n28nm", R["F_lodo"][b]) for b in sorted(R["F_lodo"])]
+    series = [("普通 CNN 直接用（不给新设计的标签）", C_HS, lambda v: (v.get("binary_trained_on_28nm_only") or v.get("binary_trained_without_it"))["accuracy"]),
+              ("方案一：每类 5 个样本（meta 训练）", C_NHS, lambda v: v["protonet_k_shot_per_class"][5]["accuracy_mean"]),
+              ("消融：普通 CNN 特征 + 每类 5 个样本", MUTED, lambda v: v["cnn_features_k_shot_per_class"][5]["accuracy_mean"]),
+              ("参考：用该设计全部训练数据", INK2, lambda v: v["reference_in_domain_binary"]["accuracy"])]
+    x = np.arange(len(rows))
+    wbar = 0.2
+    fig, ax = plt.subplots(figsize=(9.2, 4.6))
+    for k, (lab, col, get) in enumerate(series):
+        vals = np.array([get(v) for _, v in rows]) * 100
+        xs = x + (k - 1.5) * wbar
+        ax.bar(xs, vals, width=wbar, color=col, edgecolor=SURF, linewidth=2, label=lab)
+        for xx, vv in zip(xs, vals):
+            ax.text(xx, vv + 1.2, f"{vv:.1f}", ha="center", va="bottom", fontsize=7, color=INK)
+    ax.set_xticks(x); ax.set_xticklabels([r[0] for r in rows])
+    ax.set_ylim(0, 128); ax.set_yticks(range(0, 101, 20)); ax.set_ylabel("热点检出率（%）")
+    ax.grid(axis="x", visible=False)
+    ax.legend(fontsize=8, loc="upper center", ncol=2)
+    ax.set_title("留一设计：只有跨工艺节点（32nm）时 meta 训练才有优势（训练种子 0）", loc="left")
+    fig.tight_layout(); fig.savefig(FIG / "lodo.png", dpi=200); plt.close(fig)
+    print("lodo figure saved")
