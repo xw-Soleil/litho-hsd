@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "declared_before_training": true,
+  "primary_representation": "densm",
+  "primary_seeds": [
+    0,
+    1,
+    2
+  ],
+  "primary_fewshot": {
+    "classifier": "prototype",
+    "shots_per_design_per_class": 5,
+    "support_draws": 30
+  },
+  "secondary_fewshot_shots": [
+    1,
+    10,
+    20
+  ],
+  "secondary_knn": {
+    "neighbors": 15,
+    "shots_per_design_per_class": [
+      20,
+      100
+    ]
+  },
+  "open_set": {
+    "novelty_threshold": "5th percentile of validation maximum cosine similarity to same-design training class prototypes",
+    "NNHS_labels": 0
+  },
+  "binary_threshold": 0.5,
+  "three_class_threshold_selection": "maximize macro-F1 on tune only",
+  "supervised_reference_training": [
+    "train",
+    "support"
+  ],
+  "cross_node": {
+    "holdout": "iccad1",
+    "support": "held-out design official train partition",
+    "target": "all iccad1 official-test center clips in components that contain no official-training image; manifest.cross_target",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "uncertainty": {
+      "method": "component bootstrap on seed-and-support-draw averaged sample predictions",
+      "resamples": 1000,
+      "seed": 2026103197
+    }
+  },
+  "representation_ablation": {
+    "representations": [
+      "dens",
+      "squish"
+    ],
+    "seeds": [
+      0
+    ],
+    "modes": [
+      "binary",
+      "proto",
+      "sup3"
+    ]
+  },
+  "selection_policy": "Fixed training length and method set; no selection by test scores.",
+  "limitation": "The dataset was explored in v1. A revised locked protocol does not undo historical exposure. Duplicate control does not prove absence of arbitrary spatial overlap.",
+  "split": {
+    "seed": 20261031,
+    "equivalence": [
+      "official-test neighborhood",
+      "raw image hash",
+      "D4 canonical masked120 input"
+    ],
+    "train_val": "official train components split approximately 90/10",
+    "support_tune_test": "test-only components approximately 20/20/60, rare-class support/tune minimum 5 rows when feasible",
+    "exclusion": "official-test images in any connected component containing an official-training image",
+    "fewshot_sampling": "distinct dup_key per design and class; cap at available unique keys and report actual count"
+  },
+  "three_class_threshold_grid": {
+    "logit_min": -12,
+    "logit_max": 12,
+    "step": 0.25
+  }
+}

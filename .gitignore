@@ -13,6 +13,12 @@ runs/**
 !runs/*/log.json
 results/explore/
 
+# Fixed v2 sample manifest contains dataset-derived labels and paths; rebuild locally.
+experiments/v2/manifest.csv
+results/v2/predictions/
+results/v2/support_plans/
+# V2 run logs are hash-verified artifacts that record absolute cluster paths; results live in results/v2/.
+
 # 系统与缓存文件
 __pycache__/
 *.pyc

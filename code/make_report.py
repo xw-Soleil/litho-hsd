@@ -30,6 +30,7 @@ def mc_row(name, rep, note=""):
 
 
 w("# 光刻热点检测：方案一（Meta Learning）与方案二（概率阈值）实验结果\n")
+w("> **V1 历史实验，不能作为独立泛化性能结论。** 跨分区重复及 EVAL 参与方法选择的问题已确认；数值仅用于追溯。修正协议见 [V2 说明](../experiments/v2/README.md)。\n")
 w("> 本文件由 `code/make_report.py` 根据 `results/metrics.json` 自动生成。图在 `results/figures/`。\n")
 
 # ------------------------------------------------------------------ data split
@@ -44,7 +45,7 @@ w("\n一个“邻域组”= 1 个中心窗口 + 它的 8 个相邻窗口，同�
 # ------------------------------------------------------------------ binary
 A = R["A_binary"]
 w("## 2. 二分类热点检测（与参考论文对比）\n")
-w("测试集 = ICCAD12 标准测试集（iccad2–5 合并，2,524 HS / 13,184 NHS），与 Geng et al. ICCAD'20 Table 2 的样本数一致。")
+w("历史二分类评估使用课程 PNG 的 iccad2–5 中心窗（2,524 HS / 13,184 NHS）。参考论文 Table 1 为 2,524 HS / 13,503 NHS，样本数并不一致；不能直接排名。")
 w("Accuracy = 热点检出率，FA = 被误报为热点的非热点个数。@0.5 列是固定阈值的真实结果；"
   "最后一列把阈值调到和论文相同的检出率再数误报，属于工作点对比（相当于在 ROC 曲线上取同一点），阈值用到了测试标签。\n")
 w("| 方法 | AUC | Accuracy@0.5 | FA@0.5 | 在论文同等 Accuracy 下的 FA |\n|---|---:|---:|---:|---:|")
@@ -68,8 +69,7 @@ w(f"\n按 benchmark（{best}，阈值 0.5）：\n")
 w("| benchmark | HS | NHS | Accuracy | FA |\n|---|---:|---:|---:|---:|")
 for b, v in A[best]["per_bench"].items():
     w(f"| {b} | {v['n_hs']} | {v['n_non']} | {pct(v['accuracy'])} | {v['fa']} |")
-w("\n注意：论文的 ICCAD12 测试图是 3.6×3.6 µm 的大图，本课程数据是 1.2×1.2 µm 的 clip，所以这是“同一基准、同一样本数、不同 clip 格式”的对比，"
-  "汇报时要说明，不要直接宣称超过论文。\n")
+w("\n注意：论文使用 3600×3600 的测试图，课程 PNG 为 1200×1200；样本数、输入格式和训练协议都不一致，不应宣称超过论文。\n")
 w("![ROC](figures/binary_roc.png)\n")
 
 # ------------------------------------------------------------------ three-class comparison
@@ -180,8 +180,8 @@ w("\n![cm](figures/confusion.png)\n")
 E = R["E_ceiling"]
 w("## 7. 数据审计\n")
 w(f"- EVAL 中 {E['eval_nnhs']:,} 个 NNHS 里，{E['identical_to_an_NHS_image']:,} 个（{pct(E['identical_to_an_NHS_image']/E['eval_nnhs'])}）"
-  f"与某个 NHS 图像**逐像素完全相同**，{E['blank_clip']:,} 个是全黑空白图。仅凭图像，这些样本不可能被分对。")
-w("- train 与 test 没有完全相同的图像（无泄漏）。")
+  f"与某个 NHS 图像**逐像素完全相同**，{E['blank_clip']:,} 个是全黑空白图。纯图像分类器无法同时满足全部冲突标签，不意味着这些 NNHS 都必错，也不构成 macro-F1 上限。")
+w("- 原始官方 train/test 完整图像哈希无交集不等于无泄漏。后续发现 TRAIN/VAL 重复 327 张、CALIB/EVAL 重复 14,602 张；统一裁剪加黑边后，EVAL 有 11,220 张与 TRAIN 输入相同。")
 w("- 训练图内容铺满 1200×1200；测试图内容只在 [88, 1112] 内（四周 88 px 黑边），线宽相同，说明测试图是裁剪而非缩放。")
 w("- squish 64×64 编码对 100% 的图像无损（最多 57 条边）。")
 w("\n## 8. 复现（conda 环境 torchTrain，Apple M4 Pro GPU；一次只跑一个训练任务，每个约 10–15 分钟）\n")

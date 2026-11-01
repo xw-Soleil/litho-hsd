@@ -1,0 +1,1068 @@
+{
+  "protocol_version": "component-disjoint-v2.1",
+  "seed": 20261031,
+  "source": {
+    "meta_sha256": "d49366958cb6e762b704109295235f57c2c1407b2cd38a1e2d390cacf8788b54",
+    "dens120m_sha256": "1934ef2eb17ceb3a6a6ce0dafcb97959ec6e06bacf58e02ddbd11c7a31f95654",
+    "algorithm": "minimum blake2b-128 digest across all 8 D4 views"
+  },
+  "row_count": 165016,
+  "counts": [
+    {
+      "part": "excluded",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 161,
+      "unique_dup_keys": 161
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 1553,
+      "unique_dup_keys": 999
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad1",
+      "cls": "NNHS",
+      "rows": 2120,
+      "unique_dup_keys": 1309
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 85,
+      "unique_dup_keys": 85
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 2094,
+      "unique_dup_keys": 1627
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad2",
+      "cls": "NNHS",
+      "rows": 11312,
+      "unique_dup_keys": 5507
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 681,
+      "unique_dup_keys": 670
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 6640,
+      "unique_dup_keys": 6213
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad3",
+      "cls": "NNHS",
+      "rows": 9536,
+      "unique_dup_keys": 5445
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 79,
+      "unique_dup_keys": 79
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 2454,
+      "unique_dup_keys": 2163
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad4",
+      "cls": "NNHS",
+      "rows": 14576,
+      "unique_dup_keys": 9715
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 19,
+      "unique_dup_keys": 19
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 1787,
+      "unique_dup_keys": 1439
+    },
+    {
+      "part": "excluded",
+      "bench": "iccad5",
+      "cls": "NNHS",
+      "rows": 13080,
+      "unique_dup_keys": 7035
+    },
+    {
+      "part": "support",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 14,
+      "unique_dup_keys": 14
+    },
+    {
+      "part": "support",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 118,
+      "unique_dup_keys": 95
+    },
+    {
+      "part": "support",
+      "bench": "iccad1",
+      "cls": "NNHS",
+      "rows": 48,
+      "unique_dup_keys": 46
+    },
+    {
+      "part": "support",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 82,
+      "unique_dup_keys": 82
+    },
+    {
+      "part": "support",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 1203,
+      "unique_dup_keys": 1195
+    },
+    {
+      "part": "support",
+      "bench": "iccad2",
+      "cls": "NNHS",
+      "rows": 4376,
+      "unique_dup_keys": 4181
+    },
+    {
+      "part": "support",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 225,
+      "unique_dup_keys": 223
+    },
+    {
+      "part": "support",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 2270,
+      "unique_dup_keys": 2253
+    },
+    {
+      "part": "support",
+      "bench": "iccad3",
+      "cls": "NNHS",
+      "rows": 3760,
+      "unique_dup_keys": 3496
+    },
+    {
+      "part": "support",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 20,
+      "unique_dup_keys": 20
+    },
+    {
+      "part": "support",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 473,
+      "unique_dup_keys": 468
+    },
+    {
+      "part": "support",
+      "bench": "iccad4",
+      "cls": "NNHS",
+      "rows": 2504,
+      "unique_dup_keys": 2117
+    },
+    {
+      "part": "support",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 5,
+      "unique_dup_keys": 5
+    },
+    {
+      "part": "support",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 135,
+      "unique_dup_keys": 132
+    },
+    {
+      "part": "support",
+      "bench": "iccad5",
+      "cls": "NNHS",
+      "rows": 760,
+      "unique_dup_keys": 706
+    },
+    {
+      "part": "test",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 38,
+      "unique_dup_keys": 38
+    },
+    {
+      "part": "test",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 345,
+      "unique_dup_keys": 278
+    },
+    {
+      "part": "test",
+      "bench": "iccad1",
+      "cls": "NNHS",
+      "rows": 328,
+      "unique_dup_keys": 228
+    },
+    {
+      "part": "test",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 248,
+      "unique_dup_keys": 247
+    },
+    {
+      "part": "test",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 3623,
+      "unique_dup_keys": 3603
+    },
+    {
+      "part": "test",
+      "bench": "iccad2",
+      "cls": "NNHS",
+      "rows": 13112,
+      "unique_dup_keys": 12632
+    },
+    {
+      "part": "test",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 676,
+      "unique_dup_keys": 670
+    },
+    {
+      "part": "test",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 6817,
+      "unique_dup_keys": 6745
+    },
+    {
+      "part": "test",
+      "bench": "iccad3",
+      "cls": "NNHS",
+      "rows": 11272,
+      "unique_dup_keys": 10456
+    },
+    {
+      "part": "test",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 58,
+      "unique_dup_keys": 56
+    },
+    {
+      "part": "test",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 1403,
+      "unique_dup_keys": 1369
+    },
+    {
+      "part": "test",
+      "bench": "iccad4",
+      "cls": "NNHS",
+      "rows": 7512,
+      "unique_dup_keys": 6375
+    },
+    {
+      "part": "test",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 12,
+      "unique_dup_keys": 12
+    },
+    {
+      "part": "test",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 382,
+      "unique_dup_keys": 376
+    },
+    {
+      "part": "test",
+      "bench": "iccad5",
+      "cls": "NNHS",
+      "rows": 2288,
+      "unique_dup_keys": 2074
+    },
+    {
+      "part": "train",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 89,
+      "unique_dup_keys": 89
+    },
+    {
+      "part": "train",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 306,
+      "unique_dup_keys": 223
+    },
+    {
+      "part": "train",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 157,
+      "unique_dup_keys": 155
+    },
+    {
+      "part": "train",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 4757,
+      "unique_dup_keys": 4073
+    },
+    {
+      "part": "train",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 818,
+      "unique_dup_keys": 818
+    },
+    {
+      "part": "train",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 4179,
+      "unique_dup_keys": 3636
+    },
+    {
+      "part": "train",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 86,
+      "unique_dup_keys": 86
+    },
+    {
+      "part": "train",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 4007,
+      "unique_dup_keys": 3575
+    },
+    {
+      "part": "train",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 23,
+      "unique_dup_keys": 23
+    },
+    {
+      "part": "train",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 2444,
+      "unique_dup_keys": 1913
+    },
+    {
+      "part": "tune",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 13,
+      "unique_dup_keys": 13
+    },
+    {
+      "part": "tune",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 111,
+      "unique_dup_keys": 95
+    },
+    {
+      "part": "tune",
+      "bench": "iccad1",
+      "cls": "NNHS",
+      "rows": 56,
+      "unique_dup_keys": 50
+    },
+    {
+      "part": "tune",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 83,
+      "unique_dup_keys": 83
+    },
+    {
+      "part": "tune",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 1210,
+      "unique_dup_keys": 1204
+    },
+    {
+      "part": "tune",
+      "bench": "iccad2",
+      "cls": "NNHS",
+      "rows": 4368,
+      "unique_dup_keys": 4205
+    },
+    {
+      "part": "tune",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 226,
+      "unique_dup_keys": 224
+    },
+    {
+      "part": "tune",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 2278,
+      "unique_dup_keys": 2256
+    },
+    {
+      "part": "tune",
+      "bench": "iccad3",
+      "cls": "NNHS",
+      "rows": 3760,
+      "unique_dup_keys": 3481
+    },
+    {
+      "part": "tune",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 20,
+      "unique_dup_keys": 20
+    },
+    {
+      "part": "tune",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 472,
+      "unique_dup_keys": 468
+    },
+    {
+      "part": "tune",
+      "bench": "iccad4",
+      "cls": "NNHS",
+      "rows": 2496,
+      "unique_dup_keys": 2108
+    },
+    {
+      "part": "tune",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 5,
+      "unique_dup_keys": 5
+    },
+    {
+      "part": "tune",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 135,
+      "unique_dup_keys": 132
+    },
+    {
+      "part": "tune",
+      "bench": "iccad5",
+      "cls": "NNHS",
+      "rows": 760,
+      "unique_dup_keys": 683
+    },
+    {
+      "part": "val",
+      "bench": "iccad1",
+      "cls": "HS",
+      "rows": 10,
+      "unique_dup_keys": 10
+    },
+    {
+      "part": "val",
+      "bench": "iccad1",
+      "cls": "NHS",
+      "rows": 34,
+      "unique_dup_keys": 31
+    },
+    {
+      "part": "val",
+      "bench": "iccad2",
+      "cls": "HS",
+      "rows": 17,
+      "unique_dup_keys": 17
+    },
+    {
+      "part": "val",
+      "bench": "iccad2",
+      "cls": "NHS",
+      "rows": 528,
+      "unique_dup_keys": 446
+    },
+    {
+      "part": "val",
+      "bench": "iccad3",
+      "cls": "HS",
+      "rows": 91,
+      "unique_dup_keys": 91
+    },
+    {
+      "part": "val",
+      "bench": "iccad3",
+      "cls": "NHS",
+      "rows": 464,
+      "unique_dup_keys": 388
+    },
+    {
+      "part": "val",
+      "bench": "iccad4",
+      "cls": "HS",
+      "rows": 9,
+      "unique_dup_keys": 9
+    },
+    {
+      "part": "val",
+      "bench": "iccad4",
+      "cls": "NHS",
+      "rows": 445,
+      "unique_dup_keys": 370
+    },
+    {
+      "part": "val",
+      "bench": "iccad5",
+      "cls": "HS",
+      "rows": 3,
+      "unique_dup_keys": 3
+    },
+    {
+      "part": "val",
+      "bench": "iccad5",
+      "cls": "NHS",
+      "rows": 272,
+      "unique_dup_keys": 165
+    }
+  ],
+  "part_counts": {
+    "excluded": 66177,
+    "test": 48114,
+    "train": 16866,
+    "support": 15993,
+    "tune": 15993,
+    "val": 1873
+  },
+  "components": {
+    "n": 22705,
+    "largest_sizes": [
+      53514,
+      2517,
+      559,
+      539,
+      501,
+      369,
+      207,
+      207,
+      195,
+      171,
+      162,
+      122,
+      112,
+      92,
+      90
+    ]
+  },
+  "pairwise_overlap": [
+    {
+      "parts": [
+        "train",
+        "val"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "train",
+        "support"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "train",
+        "tune"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "train",
+        "test"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "val",
+        "support"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "val",
+        "tune"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "val",
+        "test"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "support",
+        "tune"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "support",
+        "test"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    },
+    {
+      "parts": [
+        "tune",
+        "test"
+      ],
+      "component_id": 0,
+      "dup_key": 0,
+      "hash": 0
+    }
+  ],
+  "cross_node": {
+    "support": {
+      "HS": 89,
+      "NHS": 306
+    },
+    "target": {
+      "HS": 65,
+      "NHS": 54
+    }
+  },
+  "test_structure": {
+    "rows": 48114,
+    "counts_by_role": {
+      "HS-center": 1032,
+      "NHS-center": 4314,
+      "NHS-neighbour": 8256,
+      "NNHS-neighbour": 34512
+    },
+    "counts_by_benchmark_class": [
+      {
+        "bench": "iccad1",
+        "cls": "HS",
+        "rows": 38
+      },
+      {
+        "bench": "iccad1",
+        "cls": "NHS",
+        "rows": 345
+      },
+      {
+        "bench": "iccad1",
+        "cls": "NNHS",
+        "rows": 328
+      },
+      {
+        "bench": "iccad2",
+        "cls": "HS",
+        "rows": 248
+      },
+      {
+        "bench": "iccad2",
+        "cls": "NHS",
+        "rows": 3623
+      },
+      {
+        "bench": "iccad2",
+        "cls": "NNHS",
+        "rows": 13112
+      },
+      {
+        "bench": "iccad3",
+        "cls": "HS",
+        "rows": 676
+      },
+      {
+        "bench": "iccad3",
+        "cls": "NHS",
+        "rows": 6817
+      },
+      {
+        "bench": "iccad3",
+        "cls": "NNHS",
+        "rows": 11272
+      },
+      {
+        "bench": "iccad4",
+        "cls": "HS",
+        "rows": 58
+      },
+      {
+        "bench": "iccad4",
+        "cls": "NHS",
+        "rows": 1403
+      },
+      {
+        "bench": "iccad4",
+        "cls": "NNHS",
+        "rows": 7512
+      },
+      {
+        "bench": "iccad5",
+        "cls": "HS",
+        "rows": 12
+      },
+      {
+        "bench": "iccad5",
+        "cls": "NHS",
+        "rows": 382
+      },
+      {
+        "bench": "iccad5",
+        "cls": "NNHS",
+        "rows": 2288
+      }
+    ],
+    "counts_by_benchmark_role": [
+      {
+        "bench": "iccad1",
+        "role": "HS-center",
+        "rows": 38
+      },
+      {
+        "bench": "iccad1",
+        "role": "NHS-center",
+        "rows": 41
+      },
+      {
+        "bench": "iccad1",
+        "role": "NHS-neighbour",
+        "rows": 304
+      },
+      {
+        "bench": "iccad1",
+        "role": "NNHS-neighbour",
+        "rows": 328
+      },
+      {
+        "bench": "iccad2",
+        "role": "HS-center",
+        "rows": 248
+      },
+      {
+        "bench": "iccad2",
+        "role": "NHS-center",
+        "rows": 1639
+      },
+      {
+        "bench": "iccad2",
+        "role": "NHS-neighbour",
+        "rows": 1984
+      },
+      {
+        "bench": "iccad2",
+        "role": "NNHS-neighbour",
+        "rows": 13112
+      },
+      {
+        "bench": "iccad3",
+        "role": "HS-center",
+        "rows": 676
+      },
+      {
+        "bench": "iccad3",
+        "role": "NHS-center",
+        "rows": 1409
+      },
+      {
+        "bench": "iccad3",
+        "role": "NHS-neighbour",
+        "rows": 5408
+      },
+      {
+        "bench": "iccad3",
+        "role": "NNHS-neighbour",
+        "rows": 11272
+      },
+      {
+        "bench": "iccad4",
+        "role": "HS-center",
+        "rows": 58
+      },
+      {
+        "bench": "iccad4",
+        "role": "NHS-center",
+        "rows": 939
+      },
+      {
+        "bench": "iccad4",
+        "role": "NHS-neighbour",
+        "rows": 464
+      },
+      {
+        "bench": "iccad4",
+        "role": "NNHS-neighbour",
+        "rows": 7512
+      },
+      {
+        "bench": "iccad5",
+        "role": "HS-center",
+        "rows": 12
+      },
+      {
+        "bench": "iccad5",
+        "role": "NHS-center",
+        "rows": 286
+      },
+      {
+        "bench": "iccad5",
+        "role": "NHS-neighbour",
+        "rows": 96
+      },
+      {
+        "bench": "iccad5",
+        "role": "NNHS-neighbour",
+        "rows": 2288
+      }
+    ],
+    "unique_raw_hashes": 44566,
+    "unique_masked_d4_keys": 44543,
+    "neighbourhoods": 5346,
+    "components": 4999,
+    "neighbourhood_size_histogram": {
+      "9": 5346
+    },
+    "blank_rows_n_edges_zero": 0,
+    "blank_rows_by_benchmark_class": [],
+    "raw_hash_conflicts": {
+      "grouping_keys": [
+        "hash"
+      ],
+      "groups": 384,
+      "rows": 1514,
+      "rows_by_class": {
+        "NHS": 535,
+        "HS": 0,
+        "NNHS": 979
+      },
+      "minimum_unavoidable_errors": 530
+    },
+    "benchmark_raw_hash_conflicts": {
+      "grouping_keys": [
+        "bench",
+        "hash"
+      ],
+      "groups": 437,
+      "rows": 1514,
+      "rows_by_class": {
+        "NHS": 535,
+        "HS": 0,
+        "NNHS": 979
+      },
+      "minimum_unavoidable_errors": 530
+    },
+    "masked_d4_conflicts": {
+      "grouping_keys": [
+        "dup_key"
+      ],
+      "groups": 385,
+      "rows": 1524,
+      "rows_by_class": {
+        "NHS": 537,
+        "HS": 0,
+        "NNHS": 987
+      },
+      "minimum_unavoidable_errors": 532
+    },
+    "nnhs_matching_test_nhs_raw_image": {
+      "rows": 979,
+      "nnhs_rows": 34512,
+      "fraction": 0.028366944830783496
+    },
+    "interpretation": [
+      "The minimum unavoidable error count applies to a deterministic classifier that must output one label per grouping key. It is not a macro-F1 ceiling.",
+      "Raw-image conflicts assume image-only prediction; benchmark+raw-image conflicts allow the benchmark identity as input.",
+      "Masked-D4 conflicts require invariance to all eight D4 views. Four-view TTA does not guarantee that invariance.",
+      "Blank clips were excluded through the component policy; this changes the evaluated population relative to the original test set."
+    ]
+  },
+  "training_allocation": {
+    "requested_fractions": {
+      "train": 0.9,
+      "val": 0.1
+    },
+    "minimum_rows_per_benchmark_class": {
+      "train": 15,
+      "val": 1
+    },
+    "target_counts": {
+      "train": {
+        "iccad1/HS": 89.10000000000001,
+        "iccad1/NHS": 306.0,
+        "iccad2/HS": 156.6,
+        "iccad2/NHS": 4756.5,
+        "iccad3/HS": 818.1,
+        "iccad3/NHS": 4178.7,
+        "iccad4/HS": 85.5,
+        "iccad4/NHS": 4006.8,
+        "iccad5/HS": 23.400000000000002,
+        "iccad5/NHS": 2444.4
+      },
+      "val": {
+        "iccad1/HS": 9.899999999999991,
+        "iccad1/NHS": 34.0,
+        "iccad2/HS": 17.400000000000006,
+        "iccad2/NHS": 528.5,
+        "iccad3/HS": 90.89999999999998,
+        "iccad3/NHS": 464.3000000000002,
+        "iccad4/HS": 9.5,
+        "iccad4/NHS": 445.1999999999998,
+        "iccad5/HS": 2.599999999999998,
+        "iccad5/NHS": 271.5999999999999
+      }
+    },
+    "count_only_repairs": []
+  },
+  "target_allocation": {
+    "requested_fractions": {
+      "support": 0.2,
+      "tune": 0.2,
+      "test": 0.6
+    },
+    "minimum_rows_per_benchmark_class": {
+      "support": 5,
+      "tune": 5,
+      "test": 1
+    },
+    "target_counts": {
+      "support": {
+        "iccad1/HS": 13.0,
+        "iccad1/NHS": 114.80000000000001,
+        "iccad1/NNHS": 86.4,
+        "iccad2/HS": 82.60000000000001,
+        "iccad2/NHS": 1207.2,
+        "iccad2/NNHS": 4371.2,
+        "iccad3/HS": 225.4,
+        "iccad3/NHS": 2273.0,
+        "iccad3/NNHS": 3758.4,
+        "iccad4/HS": 19.6,
+        "iccad4/NHS": 469.6,
+        "iccad4/NNHS": 2502.4,
+        "iccad5/HS": 5.0,
+        "iccad5/NHS": 130.4,
+        "iccad5/NNHS": 761.6
+      },
+      "tune": {
+        "iccad1/HS": 13.0,
+        "iccad1/NHS": 114.80000000000001,
+        "iccad1/NNHS": 86.4,
+        "iccad2/HS": 82.60000000000001,
+        "iccad2/NHS": 1207.2,
+        "iccad2/NNHS": 4371.2,
+        "iccad3/HS": 225.4,
+        "iccad3/NHS": 2273.0,
+        "iccad3/NNHS": 3758.4,
+        "iccad4/HS": 19.6,
+        "iccad4/NHS": 469.6,
+        "iccad4/NNHS": 2502.4,
+        "iccad5/HS": 5.0,
+        "iccad5/NHS": 130.4,
+        "iccad5/NNHS": 761.6
+      },
+      "test": {
+        "iccad1/HS": 39.0,
+        "iccad1/NHS": 344.4,
+        "iccad1/NNHS": 259.2,
+        "iccad2/HS": 247.79999999999998,
+        "iccad2/NHS": 3621.6,
+        "iccad2/NNHS": 13113.6,
+        "iccad3/HS": 676.2,
+        "iccad3/NHS": 6819.0,
+        "iccad3/NNHS": 11275.2,
+        "iccad4/HS": 58.8,
+        "iccad4/NHS": 1408.8,
+        "iccad4/NNHS": 7507.2,
+        "iccad5/HS": 12.0,
+        "iccad5/NHS": 391.2,
+        "iccad5/NNHS": 2284.8
+      }
+    },
+    "count_only_repairs": [
+      {
+        "component_id": 142912,
+        "from": "test",
+        "to": "tune"
+      }
+    ]
+  },
+  "limitations": [
+    "This new protocol cannot undo historical exploration of the original official test set.",
+    "Only D4-equivalent masked density inputs, original pixel hashes and named neighbourhoods are joined; arbitrary spatial overlap or approximate similarity is not certified absent.",
+    "Test components connected to official train are excluded wholesale. Results describe this restricted subset, not the original ICCAD benchmark population.",
+    "Support and tune target 20% each, with a predetermined minimum of five rows per benchmark/class; component constraints make fractions approximate.",
+    "Duplicate images within a part and conflicting labels are retained. Few-shot evaluators must sample unique dup_keys and report actual budgets.",
+    "Cross-node target consists of all eligible iccad1 centres across support/tune/test. It is distinct from the main three-class test; holdout models must exclude all iccad1 labels during training and model selection."
+  ],
+  "manifest_sha256": "e57454d23e6fb037877fdc376493f21e6a07801be11a50dbc804f115d8779c6b"
+}

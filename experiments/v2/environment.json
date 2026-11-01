@@ -1,0 +1,14 @@
+{
+  "recorded_date": "2026-10-31",
+  "execution": "xlab01 Slurm, GPU worker pgx03",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "Pillow": "13.0.0",
+    "matplotlib": "3.11.2"
+  },
+  "note": "These are observed cluster versions, not a cross-platform installation lockfile. CUDA wheels must match the target hardware."
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-31",
+  "ssh_host": "xlab01",
+  "remote_directory": "~/work/dtco/v2",
+  "scheduler": "Slurm",
+  "jobs": [
+    {"id": 574, "purpose": "two-step smoke test for three training modes", "state": "COMPLETED", "exit_code": "0:0", "elapsed": "00:01:26"},
+    {"id": 575, "purpose": "all 21 frozen training runs", "state": "COMPLETED", "exit_code": "0:0", "elapsed": "00:49:38"},
+    {"id": 576, "purpose": "evaluation and report after successful training", "state": "COMPLETED", "exit_code": "0:0", "elapsed": "00:02:54"}
+  ],
+  "protocol_sha256": "e57454d23e6fb037877fdc376493f21e6a07801be11a50dbc804f115d8779c6b",
+  "local_artifact_verification": {
+    "complete_runs": 21,
+    "models": 21,
+    "embedding_archives": 21,
+    "classifier_probability_archives": 13,
+    "hashed_artifacts_checked": 76,
+    "all_artifact_hashes_match": true,
+    "all_manifest_and_train_val_export_index_hashes_match": true,
+    "all_training_source_hashes_match": true,
+    "cross_models_excluding_iccad1_from_train_and_val": 6,
+    "protocol_tests_passed": 5,
+    "evaluation_tests_passed": 3,
+    "independently_recomputed_main_and_cross_run_metrics": 15,
+    "maximum_saved_prediction_metric_discrepancy": 1e-12,
+    "shared_cnn_meta_support_plans_verified": true
+  },
+  "notes": [
+    "All training used the allocated remote CUDA GPU; local checks and report rendering used CPU.",
+    "Final models, embeddings, probabilities, metrics and trial predictions were synchronized locally. Recovery checkpoints remain on the cluster.",
+    "Report presentation was refined locally after evaluation; no method, model, threshold or support setting was changed after viewing results."
+  ]
+}
